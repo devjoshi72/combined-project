@@ -1,0 +1,105 @@
+body {
+width:824px;
+height:595px;}
+
+
+.one {
+width:824px;
+height:595px;
+text-align:center;
+border: 10px solid #006400}
+
+h2  {color:White;
+font-family: Arial,sans-serif;
+font-size: 20px;
+text-align:left;
+}
+
+h1 { margin-top: 160px;
+color:DarkGreen;
+font-family: Arial, sans-serif
+}
+
+.container {
+  width:100%;
+  color:White;
+  background-color: #006400;
+}
+
+.line2 {
+  margin:7px 0;
+  margin-left: 90px;
+  margin-right: 90px;
+  margin-top: 0px;
+  height:1px;
+  background:
+    repeating-linear-gradient(to right,DarkGreen 0,DarkGreen 10px,transparent 10px,transparent 12px)}
+    /*10px red then 2px transparent -> repeat this!*/
+
+.line1 {
+  width: 200px;
+  height:1px;
+  background:DarkGreen;
+  margin-left: 500px;
+  margin-top: 70px;}
+
+h3 {color:DarkGreen;
+margin-left: 390px;
+font-family: Arial, sans-serif;
+margin-block-end: 0em;}
+
+.column1 {
+float: Left;
+width: 80%;
+height: 20%;
+text-align: Left;
+background-color: #006400;
+}
+
+.column2 {
+float: Right;
+width: 20%;
+height: 20%;
+background-color: #006400;}
+
+h4 {
+margin-block-start: 0em;
+margin-block-end: 0em;
+font-size: 50px;
+font-family: Arial, sans-serif;}
+
+p {
+margin-block-start: 0em;
+margin-block-end: 0em;}
+
+.ten {color:DarkGreen;
+font-family: Arial, sans-serif;
+margin-top: 15px;
+}
+
+.two {
+color:DarkGreen;
+margin-left: 390px;
+font-family: Arial, sans-serif;
+margin-top: 3px;}
+
+.three {
+font-family: Arial, sans-serif;
+font-size: 14px;
+margin-top: 3px;
+margin-bottom: 9px;}
+
+.four {
+color:Black;
+font-family: Arial, sans-serif;
+}
+
+.five {
+margin-top: 0px;
+font-family: Arial, sans-serif;
+font-size: 17px;}
+
+.six  {color:DarkGreen;
+font-family: Arial, sans-serif;
+margin-bottom: 55px;
+}
