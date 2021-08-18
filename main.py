@@ -15,16 +15,15 @@ app=Flask(__name__)
 
 @app.route("/")
 def index():
-    name=""
     type=2
     email="deepakjoshiuk.in@gmail.com"
-    return render_template("slow.html",name=name)
+    return render_template("slow.html")
     config = pdfkit.configuration(wkhtmltopdf=r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe')
     pdf=pdfkit.from_string(html, False, configuration=config)
     if type==1:
         response=make_response(pdf)
         response.headers["Content-Type"]="application/pdf"
-        response.headers['Content-Disposition']='inline;' \
+        response.headers['Content-Disposition']='attachment;' \
                                             'filename=certificate.pdf' #inline-for view pdf mode  /attachment-for download pdf
         return response
     elif type==2:
@@ -51,7 +50,7 @@ def sendEmail(toaddr,file):
     msg.attach(MIMEText(body, 'plain'))
 
     # open the file to be sent
-    filename = "attachments name with file extention eg. .jpg"
+    filename = "attachments name with file extention eg. .pdf"
     attachment = open(file, "rb")
 
     # instance of MIMEBase and named as p

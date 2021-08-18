@@ -1,6 +1,4 @@
-from datetime import datetime
-from flask_sqlalchemy import SQLAlchemy
-from  flask import Flask,render_template,make_response,request,abort,url_for,redirect
+from flask import Flask,render_template,make_response
 import pdfkit
 import smtplib
 from email.mime.multipart import MIMEMultipart
@@ -11,49 +9,7 @@ import os
 
 app = Flask(__name__)
 
-#for store database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/contact'
-db=SQLAlchemy(app)
-class Contacts(db.Model):
-    sno = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(20), unique=False, nullable=False)
-    email = db.Column(db.String(20), unique=True, nullable=False)
-    phone_num = db.Column(db.String(13), unique=True, nullable=False)
-    msg = db.Column(db.String(120), unique=True, nullable=False)
-    date = db.Column(db.String(120))
-
-@app.route('/')
-def welcome():
-    return render_template(
-        "home.html",
-    message="welcome to the home page")
-@app.route('/ajax')
-def ajax():
-    return render_template("signup.html")
-
-@app.route('/signup')
-def signup():
-    return render_template(
-        "signup.html",
-    )
-# @app.route('/contact')
-# def contact():
-#     return render_template(
-#         "contact.html",
-#     )
 #for smtp
-@app.route("/contact", methods=['POST', 'GET'])
-def contact():
-    if request.method=='POST':
-        name= request.form.get('name')
-        email = request.form.get('email')
-        phone = request.form.get('phone_num')
-        message = request.form.get('message')
-
-        entry=Contacts(name=name, email=email, phone_num=phone, msg=message, date=datetime.date)
-        db.session.add(entry)
-        db.session.commit()
-    return render_template('contact.html')
 
 #for certificate
 @app.route("/welcomee")
@@ -116,14 +72,14 @@ def certification_project():
         os.abort(404)
 
 #for pdf
-fromaddr = "bitcoincurrency99@outlook.com"
-password = "Bitcoin@987"
+fromaddr = "info.qubisttech@gmail.com"
+password = "zrqrbjgqzoedpfvk"
 
 @app.route("/")
 def index():
     name=""
     type=2
-    email="neerajneeraj072@gmail.com"
+    email="deepakjoshiuk.in@gmail.com"
     html=render_template("pj.html",name=name)
     config = pdfkit.configuration(wkhtmltopdf=r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe')
     pdf=pdfkit.from_string(html, False, configuration=config)
