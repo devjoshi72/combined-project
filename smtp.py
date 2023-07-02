@@ -8,8 +8,6 @@ fromaddr = "info.qubisttech@gmail.com"
 password = "irbxbycdtxndvhlu"
 toaddr = "deepakjoshiuk.in@gmail.com"  #todo create a class
 
-
-
 # instance of MIMEMultipart
 msg = MIMEMultipart()
 

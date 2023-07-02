@@ -3,7 +3,6 @@ import pdfkit
 import os
 app=Flask(__name__)
 
-
 @app.route("/")
 def index():
     name=""
@@ -14,12 +13,7 @@ def index():
     response.headers["Content-Type"]="application/pdf"
     response.headers['Content-Disposition']='inline;' \
                                             'filename=certificate.pdf'   #inline-for view pdf mode  /attachment-for download pdf
-
-
     return response
-
-
-
 
 if __name__ =='__main__':
     app.run(debug=True)
